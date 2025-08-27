@@ -1,0 +1,110 @@
+.text-image-section {
+  display: flex;
+  justify-content: center;
+  padding: 4rem 2rem;
+  position: relative;
+  background-image: url('../assets/sobre-nos.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+ 
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.9) 60%, rgba(255, 255, 255, 0.7) 100%);
+    z-index: 1;
+  }
+
+  .control-space-presentation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    gap: 2rem;
+    position: relative;
+    z-index: 2;
+
+    .text-container {
+      flex: 1;
+      max-width: 550px;
+
+      h2 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+        color: #0f1a2d;
+        font-weight: 700;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+        color: #333;
+      }
+
+      button {
+        padding: 0.8rem 1.5rem;
+        background-color: #CFB024;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #86731c;
+        }
+      }
+    }
+
+    .image-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+
+      img {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        max-height: 490px;
+        border-radius: 12px;
+        object-fit: cover;
+        box-shadow: 22px 16px 0px 2px #CFB024;
+        position: relative;
+        background-color: #2e2e2d;
+      }
+    }
+  }
+}
+
+/* Responsivo */
+@media (max-width: 992px) {
+  .text-image-section {
+    .control-space-presentation {
+      flex-direction: column;
+      text-align: center;
+
+      .text-container {
+        max-width: 100%;
+        
+        h2 {
+          font-size: 1.8rem;
+        }
+      }
+
+      .image-container {
+        margin-top: 2rem;
+
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}

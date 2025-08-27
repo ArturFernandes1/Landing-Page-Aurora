@@ -1,0 +1,99 @@
+.container-accordion {
+    width: 100%;
+    margin: 0 auto;
+   /*  background-image: url('../../assets/background2.png'); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 40px 20px;
+    position: relative;
+
+    // Overlay para melhorar a legibilidade do texto
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.45);
+        z-index: 1;
+    }
+
+    .title-accordion {
+        text-align: center;
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #CFB024;
+        margin-bottom: 30px;
+        position: relative;
+        z-index: 2;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.accordion {
+    width: 800px;
+    max-width: 100%;
+    margin: 0 auto;
+    border: none;
+    background: transparent;
+    position: relative;
+    z-index: 2;
+    
+    .accordion-item {
+      min-height: 5rem; 
+      border: none;
+      margin-bottom: 1rem;
+      border: 1px solid #CFB024;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow:  0 4px 1px 0 #c8a35b;
+
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
+       &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+      }
+   
+      .accordion-header {
+        button {
+          background: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(253, 253, 253, 0.9) 100%);
+          color: #374151;
+          font-weight: 600;
+          font-size: 1.2rem;
+          padding: 1rem 1.25rem;
+          border: none;
+          outline: none;
+          box-shadow: none;
+          transition: all 0.3s ease;
+  
+          &::after {
+            filter: brightness(0) saturate(100%) invert(65%) sepia(82%) saturate(296%) hue-rotate(10deg) brightness(92%) contrast(90%);
+          }
+  
+         /*  &:not(.collapsed) {
+            background: linear-gradient(90deg, rgba(254, 249, 245, 0.95) 0%, rgba(255, 255, 255, 0.95) 100%);
+            color: #CFB024; // dourado suave
+            box-shadow: inset 0 -2px 0 #CFB024;
+          } */
+        }
+      }
+  
+      .accordion-collapse {
+        .accordion-body {
+          padding: 1rem 1.25rem;
+          font-size: 0.95rem;
+          line-height: 1.6;
+          color: #555;
+          background: rgba(230, 230, 230, 0.9);
+         /*  border-left: 3px solid #CFB024; */
+        }
+      }
+    }
+  }
+  

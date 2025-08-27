@@ -1,0 +1,129 @@
+.footer {
+    background-image: url('../assets/background2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #333;
+    padding: 80px 20px;
+    font-family: Arial, sans-serif;
+    position: relative;
+
+    // Overlay para melhorar a legibilidade do texto
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(230, 217, 201, 0.85);
+        z-index: 1;
+    }
+
+    .footer-container {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+        max-width: 1200px;
+        margin: auto;
+
+        @media (max-width: 992px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 600px) {
+            grid-template-columns: 1fr;
+            gap: 30px;
+            text-align: left;
+            max-width: 350px;
+            margin: 0 auto;
+        }
+    }
+  
+    .footer-logo {
+      img {
+        max-width: 150px;
+        margin-bottom: 15px;
+      }
+  
+      p {
+        color: #CFB024;
+        font-size: 19px;
+        margin-bottom: 15px;
+      }
+  
+      .footer-social {
+        display: flex;
+        gap: 15px;
+  
+        a {
+          color: #CFB024;
+          font-size: 24px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: 0.3s;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+  
+          &:hover {
+            background-color: #CFB024;
+            color: #fff;
+          }
+        }
+  
+        @media (max-width: 600px) {
+          justify-content: flex-start; // ícones alinhados à esquerda no mobile
+        }
+      }
+    }
+  
+    .footer-col {
+      h3 {
+        color: #CFB024;
+        font-size: 26px;
+        margin-bottom: 10px;
+        font-weight: 500;
+        text-align: left; // garante alinhamento à esquerda no desktop
+      }
+  
+      @media (max-width: 600px) {
+        h3 {
+          text-align: left; // força alinhamento à esquerda no mobile
+        }
+      }
+  
+      ul {
+        list-style: none;
+        padding: 0;
+  
+        li {
+          margin-bottom: 8px;
+          font-size: 16px;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+  
+          a {
+            text-decoration: none;
+            color: #000;
+            transition: 0.3s;
+            font-size: 16px;
+  
+            &:hover {
+              color: #CFB024;
+            }
+          }
+        }
+  
+        @media (max-width: 600px) {
+          max-width: 250px;
+          justify-content: flex-start;
+        }
+      }
+    }
+  }
+  

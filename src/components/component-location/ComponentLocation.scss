@@ -1,0 +1,39 @@
+.component-location {
+  padding: 4rem 0;
+
+  
+  .container-location {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  
+  .form-side {
+/*     background: white; */
+    padding: 2rem;
+  /*   border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); */
+  }
+  
+
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .component-location {
+    .container-location {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding: 0 1rem;
+    }
+    
+    .form-side,
+    .map-side {
+      padding: 1.5rem;
+    }
+  }
+}

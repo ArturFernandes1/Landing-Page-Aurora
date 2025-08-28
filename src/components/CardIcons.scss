@@ -52,20 +52,136 @@
 
 /* Responsividade */
 @media (max-width: 768px) {
+  .section-card {
+    padding: 50px 20px; // Reduzido padding lateral para mostrar border
+  }
+  
+  .control-space-cards {
+    padding: 10px; // Reduzido padding para mostrar border
+    overflow: visible; // Mudado para visible para mostrar border
+    position: relative; // Para posicionar indicadores
+  }
+  
+  .cards-grid {
+    display: flex; // Muda para flexbox em mobile
+    gap: 20px; // Aumentado gap para separar melhor os cards
+    overflow-x: auto; // Permite scroll horizontal
+    scroll-snap-type: x mandatory; // Snap suave ao scroll
+    scroll-behavior: smooth; // Scroll suave
+    scrollbar-width: none; // Esconde scrollbar no Firefox
+    -ms-overflow-style: none; // Esconde scrollbar no IE/Edge
+    
+    // Melhorias para touch
+    -webkit-overflow-scrolling: touch; // Scroll suave no iOS
+    touch-action: pan-x; // Permite apenas scroll horizontal no touch
+    
+    &::-webkit-scrollbar {
+      display: none; // Esconde scrollbar no Chrome/Safari
+    }
+    
+    // Adiciona padding para o primeiro e último card
+    padding: 0 20px; // Aumentado padding para mostrar border
+    
+    // Adiciona espaço no final para o último card
+    &::after {
+      content: '';
+      min-width: 20px; // Aumentado para mostrar border
+      height: 1px;
+    }
+    
+    // Indicador visual de scroll
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #c8a35b, transparent);
+      opacity: 0.3;
+      pointer-events: none;
+    }
+  }
+  
   .container-card {
-    padding: 20px;
+    min-width: 280px; // Largura mínima fixa para mobile
+    max-width: 280px; // Largura máxima fixa para mobile
+    min-height: 320px; // Altura mínima aumentada para mobile
+    flex-shrink: 0; // Impede que os cards encolham
+    scroll-snap-align: start; // Snap ao início de cada card
+    padding: 25px 20px; // Aumentado padding interno
+    transition: transform 0.2s ease; // Transição suave para hover
+    border: 1px solid #d1c8b5; // Mesmo border da versão web
+    border-radius: 12px; // Mesmo border-radius da versão web
+    box-shadow: 0 4px 1px 0 #c8a35b; // Mesma sombra da versão web
+    margin: 20px 0; // Margin acima e abaixo dos cards
+
+    &:hover {
+      transform: translateY(-2px); // Efeito de elevação no hover
+      box-shadow: 0 6px 2px 0 #c8a35b; // Sombra aumentada no hover
+    }
 
     .card-icon {
-      width: 50px;
-      height: 50px;
+      width: 55px; // Aumentado de 50px para 55px
+      height: 55px; // Aumentado de 50px para 55px
+      margin-bottom: 20px; // Aumentado de 15px para 20px
     }
 
     .card-title {
-      font-size: 16px;
+      font-size: 17px; // Aumentado de 16px para 17px
+      margin-bottom: 15px; // Aumentado de 10px para 15px
     }
 
     .card-text {
-      font-size: 13px;
+      font-size: 14px; // Aumentado de 13px para 14px
+      line-height: 1.7; // Aumentado line-height para melhor legibilidade
+    }
+  }
+}
+
+/* Responsividade para telas muito pequenas */
+@media (max-width: 480px) {
+  .section-card {
+    padding: 40px 8px; // Aumentado de 20px para 40px
+  }
+  
+  .control-space-cards {
+    padding: 10px; // Aumentado de 5px para 10px
+  }
+  
+  .cards-grid {
+    gap: 15px; // Aumentado de 12px para 15px
+    padding: 0 12px; // Aumentado de 8px para 12px
+    
+    &::after {
+      min-width: 12px; // Aumentado de 8px para 12px
+    }
+  }
+  
+  .container-card {
+    min-width: 270px; // Aumentado de 260px para 270px
+    max-width: 270px; // Aumentado de 260px para 270px
+    min-height: 300px; // Altura mínima para telas muito pequenas
+    padding: 22px 16px; // Aumentado padding interno
+    border: 1px solid #d1c8b5; // Mesmo border da versão web
+    border-radius: 12px; // Mesmo border-radius da versão web
+    box-shadow: 0 4px 1px 0 #c8a35b; // Mesma sombra da versão web
+    margin: 15px 0; // Margin acima e abaixo dos cards (menor para telas pequenas)
+
+    .card-icon {
+      width: 50px; // Aumentado de 45px para 50px
+      height: 50px; // Aumentado de 45px para 50px
+      margin-bottom: 18px; // Aumentado margin
+    }
+
+    .card-title {
+      font-size: 16px; // Aumentado de 15px para 16px
+      margin-bottom: 12px; // Aumentado margin
+    }
+
+    .card-text {
+      font-size: 13px; // Aumentado de 12px para 13px
+      line-height: 1.6; // Line-height ajustado
     }
   }
 }

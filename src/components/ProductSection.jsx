@@ -1,6 +1,6 @@
 import React from 'react';
 import './ProductSection.scss';
-import colarModelo1 from '../assets/colar-modelo1.png';
+import colarModelo1 from '/assets/colar-modelo1.png';
 
 export default function ProductSection() {
   const products = [

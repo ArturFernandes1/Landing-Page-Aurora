@@ -3,7 +3,7 @@ import "./Footer.scss";
 import { FaTiktok, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import logoEmpresa from "../assets/logo-copia.png";
+import logoEmpresa from "/assets/logo-copia.png";
 
 export default function Footer() {
   return (

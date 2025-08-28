@@ -3,7 +3,7 @@
   justify-content: center;
   padding: 4rem 2rem;
   position: relative;
-  background-image: url('../assets/sobre-nos.png');
+  background-image: url('/assets/sobre-nos.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -88,13 +88,28 @@
   .text-image-section {
     .control-space-presentation {
       flex-direction: column;
-      text-align: center;
+      text-align: left; // Mudado de center para left
 
       .text-container {
         max-width: 100%;
+        text-align: left; // Garante que o container de texto fique à esquerda
         
         h2 {
           font-size: 1.8rem;
+          text-align: left; // Título alinhado à esquerda
+          margin-bottom: 1rem;
+        }
+        
+        p {
+          text-align: justify; // Texto justify em mobile
+          font-size: 1rem;
+          line-height: 1.7;
+          margin-bottom: 1.5rem;
+        }
+        
+        button {
+          text-align: left; // Botão alinhado à esquerda
+          align-self: flex-start; // Alinha o botão à esquerda
         }
       }
 

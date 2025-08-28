@@ -1,7 +1,7 @@
 .container-accordion {
     width: 100%;
     margin: 0 auto;
-   /*  background-image: url('../../assets/background2.png'); */
+   /*  background-image: url('/assets/background2.png'); */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -30,6 +30,18 @@
         position: relative;
         z-index: 2;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+
+        /* Responsividade para mobile */
+        @media (max-width: 768px) {
+            font-size: 1.8rem; // Reduzido para mobile
+            margin-bottom: 35px; // Aumentado de 25px para 35px
+        }
+        
+        @media (max-width: 480px) {
+            font-size: 1.6rem; // Ainda menor para telas pequenas
+            margin-top: 20px;
+            margin-bottom: 30px; // Aumentado de 20px para 30px
+        }
     }
 }
 

@@ -3,6 +3,18 @@
         border-top-right-radius: 90px;
         border-bottom-left-radius: 90px;
         padding: 80px 0;
+        
+        @media (max-width: 768px) {
+            padding: 60px 0; // Reduzido para mobile
+            border-top-right-radius: 60px; // Reduzido para mobile
+            border-bottom-left-radius: 60px; // Reduzido para mobile
+        }
+        
+        @media (max-width: 480px) {
+            padding: 40px 0; // Ainda menor para telas muito pequenas
+            border-top-right-radius: 40px; // Reduzido para telas muito pequenas
+            border-bottom-left-radius: 40px; // Reduzido para telas muito pequenas
+        }
     
     .exhibition-container {
         max-width: 1200px;
@@ -29,8 +41,16 @@
             max-width: 100%;
             height: auto;
             max-height: 550px;
-           
-    
+            
+            @media (max-width: 768px) {
+                max-height: 350px; // Reduzido para mobile
+                max-width: 80%; // Reduzido para mobile
+            }
+            
+            @media (max-width: 480px) {
+                max-height: 280px; // Ainda menor para telas muito pequenas
+                max-width: 85%; // Ajustado para telas muito pequenas
+            }
         }
     }
     
@@ -46,9 +66,15 @@
             margin-bottom: 20px;
             line-height: 1.2;
             
-            @media (max-width: 768px) {
-                font-size: 36px;
-            }
+                    @media (max-width: 768px) {
+            font-size: 32px; // Reduzido de 36px para 32px
+            margin-bottom: 15px; // Reduzido margin
+        }
+        
+        @media (max-width: 480px) {
+            font-size: 28px; // Ainda menor para telas muito pequenas
+            margin-bottom: 12px; // Margin reduzido
+        }
         }
         
         .exhibition-description {
@@ -60,10 +86,18 @@
             margin-bottom: 30px;
             text-align: justify;
             
-            @media (max-width: 768px) {
-                text-align: center;
-                font-size: 17px;
-            }
+                    @media (max-width: 768px) {
+            text-align: justify; // Mantido justify em mobile
+            font-size: 16px; // Reduzido de 17px para 16px
+            margin-bottom: 25px; // Margin reduzido
+            line-height: 1.6; // Line-height ajustado
+        }
+        
+        @media (max-width: 480px) {
+            font-size: 15px; // Ainda menor para telas muito pequenas
+            margin-bottom: 20px; // Margin reduzido
+            line-height: 1.5; // Line-height ajustado
+        }
         }
         
         .exhibition-features {
@@ -108,6 +142,16 @@
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(207, 176, 36, 0.3);
+            
+            @media (max-width: 768px) {
+                font-size: 17px; // Reduzido para mobile
+                padding: 12px 25px; // Padding reduzido
+            }
+            
+            @media (max-width: 480px) {
+                font-size: 16px; // Ainda menor para telas muito pequenas
+                padding: 10px 20px; // Padding reduzido
+            }
             
             &:hover {
                 transform: translateY(-2px);

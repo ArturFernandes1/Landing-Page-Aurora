@@ -1,6 +1,6 @@
 import React from 'react';
 import './Presentation.scss';
-import persona from '../assets/persona.png'; // Substitua pelo caminho da sua imagem
+import persona from '/assets/persona.png'; // Substitua pelo caminho da sua imagem
 
 export default function TextImageSection() {
   return (

@@ -1,8 +1,8 @@
 import React from 'react';
 import './CardIcons.scss';
-import ruby from '../assets/ruby.png';
-import reliability from '../assets/reliability.png';
-import deal from '../assets/deal.png';
+import ruby from '/assets/ruby.png';
+import reliability from '/assets/reliability.png';
+import deal from '/assets/deal.png';
 
 const cards = [
   { title: 'Sofisticação', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Quisque non felis nec arcu aliquam cursus. Integer at justo non risus tincidunt varius.', image: ruby },

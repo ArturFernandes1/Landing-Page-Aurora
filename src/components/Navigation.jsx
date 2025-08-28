@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import "./Navigation.scss";
-import logoEmpresa from "../assets/logo-copia.png";
+import logoEmpresa from "/assets/logo-copia.png";
 
 export default function CustomNavigation() {
   const [scrolled, setScrolled] = useState(false);
@@ -22,8 +22,19 @@ export default function CustomNavigation() {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
+      // Adiciona um highlight visual temporário
+      element.style.border = '3px solid red';
+      element.style.transition = 'border 0.3s ease';
+      
+      // Remove o highlight após 2 segundos
+      setTimeout(() => {
+        element.style.border = '';
+      }, 2000);
+      
       element.scrollIntoView({ behavior: 'smooth' });
       setMobileOpen(false);
+    } else {
+      console.error('Elemento não encontrado com ID:', sectionId);
     }
   };
 
@@ -69,12 +80,18 @@ export default function CustomNavigation() {
             >
               Sobre Nós
             </button>
-            <NavLink to="/services" onClick={() => setMobileOpen(false)}>
+            <button 
+              className="nav-link-btn"
+              onClick={() => scrollToSection('areas-atuacao')}
+            >
               Áreas de Atuação
-            </NavLink>
-            <NavLink to="/blog" onClick={() => setMobileOpen(false)}>
+            </button>
+            <button 
+              className="nav-link-btn"
+              onClick={() => scrollToSection('blog')}
+            >
               Blog
-            </NavLink>
+            </button>
             <button 
               className="nav-link-btn"
               onClick={() => scrollToSection('contato')}

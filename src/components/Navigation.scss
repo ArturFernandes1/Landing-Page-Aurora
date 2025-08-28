@@ -157,11 +157,57 @@
       visibility: visible;
     }
 
-    a {
+    .nav-link-btn, a {
       padding: 1rem 2rem;
       width: 100%;
       text-align: center;
+     
+      background: none;
+      border: none;
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 300;
+      font-size: 17px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: inherit;
+      text-decoration: none;
+      position: relative;
+      border-radius: 0;
+
+      &:hover {
+        color: white;
+        background-color: #CFB024;
+  
+      }
+
+      &:active {
+        background-color: rgba(207, 176, 36, 0.2);
+        transform: translateX(5px) scale(0.98);
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    .contact-btn {
+      padding: 1rem 2rem;
+      width: auto;
+      text-align: center;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      background-color: #CFB024;
+      color: white;
+      font-weight: 300;
+      font-size: 17px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: #d4af37;
+        transform: translateY(-2px);
+      }
 
       &:last-child {
         border-bottom: none;

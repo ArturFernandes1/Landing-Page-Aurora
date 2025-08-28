@@ -18,6 +18,17 @@
             color: #374151;
             margin-bottom: 15px;
             line-height: 1.2;
+            
+            /* Responsividade para mobile */
+            @media (max-width: 768px) {
+                font-size: 2rem; // Reduzido para mobile
+                margin-bottom: 12px;
+            }
+            
+            @media (max-width: 480px) {
+                font-size: 1.8rem; // Ainda menor para telas pequenas
+                margin-bottom: 10px;
+            }
         }
         
         .comments-subtitle {
@@ -26,6 +37,15 @@
             max-width: 600px;
             margin: 0 auto;
             line-height: 1.6;
+            
+            /* Responsividade para mobile */
+            @media (max-width: 768px) {
+                font-size: 1rem; // Reduzido para mobile
+            }
+            
+            @media (max-width: 480px) {
+                font-size: 0.95rem; // Ainda menor para telas pequenas
+            }
         }
     }
     

@@ -7,6 +7,7 @@ import Exhibition from '../components/Exhibition'
 import Presentation from '../components/Presentation'
 import ScrollToTop from '../components/ScrollToTop'
 import Comments from '../components/Comments'
+import Blog from '../components/Blog'
 
 import ComponentLocation from '../components/component-location/ComponentLocation'
 import ProductSection from '../components/ProductSection'
@@ -28,6 +29,9 @@ export default function Home() {
       </section>
       <CardIcons/>
       <Exhibition/>
+      <section id="blog">
+        <Blog/>
+      </section>
       <Accordion/>
       <Comments/>
       <section id="contato">

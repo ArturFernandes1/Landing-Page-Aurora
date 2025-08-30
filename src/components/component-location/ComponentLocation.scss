@@ -3,7 +3,7 @@
 
   
   .container-location {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 2rem;
     display: grid;
@@ -18,22 +18,48 @@
   /*   border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); */
   }
-  
 
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
   .component-location {
+    padding: 2rem 0; // Reduzido para mobile
+    
     .container-location {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      padding: 0 1rem;
+      grid-template-columns: 1fr; // Uma coluna em mobile
+      gap: 2rem; // Gap reduzido
+      padding: 8px; // Padding lateral reduzido
+      max-width: 100%; // Ocupa toda a largura disponível
     }
     
     .form-side,
     .map-side {
-      padding: 1.5rem;
+      padding: 1rem; // Padding reduzido para mobile
+    }
+
+    .form-side {
+      order: 2; // Formulário aparece depois do mapa em mobile
+    }
+
+    .map-side {
+      order: 1; // Mapa aparece primeiro em mobile
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .component-location {
+    padding: 1.5rem 0; // Padding ainda menor para telas muito pequenas
+    
+    .container-location {
+      gap: 1.5rem; // Gap ainda menor
+      padding: 0 4px; // Padding lateral mínimo
+    }
+    
+    .form-side,
+    .map-side {
+      padding: 0.75rem; // Padding mínimo para telas muito pequenas
     }
   }
 }

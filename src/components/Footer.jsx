@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.scss";
-import { FaTiktok, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import logoEmpresa from "/assets/logo-copia.png";
@@ -15,7 +15,7 @@ export default function Footer() {
           <img src={logoEmpresa} alt="Logo da empresa" />
           <p>Se é importante pra você, é importante pra nós!</p>
           <div className="footer-social">
-            <a href="#"><FaTiktok /></a>
+            <a href="#"><FaFacebook /></a>
             <a href="#"><FaInstagram /></a>
             <a href="#"><FaWhatsapp /></a>
           </div>

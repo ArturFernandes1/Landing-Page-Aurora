@@ -48,19 +48,36 @@
     }
   
     .submit-btn {
-      background: linear-gradient(135deg, #e3ce9e, #d4a94f);
-      color: #161615;
-      font-size: 1rem;
-      font-weight: 600;
-      padding: 1rem;
+      font-family: 'Questrial', sans-serif;
+      font-size: 19px;
+      font-weight: 400;
+      background: linear-gradient(135deg, #CFB024 0%, #d4af37 100%);
+      color: white;
       border: none;
+      padding: 15px 30px;
       border-radius: 50px;
       cursor: pointer;
       transition: all 0.3s ease;
-  
+      box-shadow: 0 4px 15px rgba(207, 176, 36, 0.3);
+      
+      @media (max-width: 768px) {
+        font-size: 17px;
+        padding: 12px 25px;
+      }
+      
+      @media (max-width: 480px) {
+        font-size: 16px;
+        padding: 10px 20px;
+      }
+      
       &:hover {
-        background: linear-gradient(135deg, #d4a94f, #e3ce9e);
         transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(207, 176, 36, 0.4);
+        background: linear-gradient(135deg, #d4af37 0%, #CFB024 100%);
+      }
+      
+      &:active {
+        transform: translateY(0);
       }
     }
   }

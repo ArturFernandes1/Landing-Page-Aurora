@@ -2,14 +2,14 @@ import React from 'react';
 import './Exhibition.scss';
 
 import modelo2 from '/assets/modelo2.png';
-import modelo3 from '/assets/modelo3.png';
+import modelo7 from '/assets/modelo-personalizado.png';
 
 export default function Exhibition() {
     return (
         <section id="areas-atuacao" className="exhibition">
             <div className="exhibition-container">
                 <div className="exhibition-image">
-                    <img src={modelo3} alt="Modelo de joia" />
+                    <img src={modelo7} alt="Modelo de joia" />
                 </div>
                 <div className="exhibition-content">
                     <h2 className="exhibition-title">Nossa Exposição de Joias</h2>

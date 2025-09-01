@@ -1,14 +1,8 @@
 import React from 'react';
 import './Blog.scss';
 
-import modelo1 from '../../public/assets/modelo1.png';
-import modelo2 from '../../public/assets/modelo2.png';
-import modelo3 from '../../public/assets/modelo3.png';
-import modelo4 from '../../public/assets/modelo4.png';
-import modelo5 from '../../public/assets/modelo5.png';
-import modelo6 from '../../public/assets/modelo6.png';
-import modelo7 from '../../public/assets/modelo7.png';
-import modelo8 from '../../public/assets/modelo8.png';
+import modelo1 from '../assets/modelo1.png';
+import modelo2 from '../assets/modelo2.png';
 
 const Blog = () => {
   const blogPosts = [
@@ -16,42 +10,42 @@ const Blog = () => {
       id: 1,
       title: 'Tendências de Joias para 2024: O Que Está em Alta',
       category: 'Tendências',
-      image: modelo7,
+      image: '/assets/modelo7.png',
       date: '19 de janeiro de 2024'
     },
     {
       id: 2,
       title: 'Como Cuidar das Suas Joias Preciosas',
       category: 'Cuidados',
-      image: modelo7,
+      image: '/assets/modelo7.png',
       date: '19 de janeiro de 2024'
     },
     {
       id: 3,
       title: 'História das Joias: Do Passado ao Presente',
       category: 'História',
-      image: modelo3,
+      image: '/assets/modelo3.png',
       date: '19 de janeiro de 2024'
     },
     {
       id: 4,
       title: 'Como Combinar Joias com Diferentes Looks',
       category: 'Estilo',
-      image: modelo8,
+      image: '/assets/modelo8.png',
       date: '19 de janeiro de 2024'
     },
     {
       id: 5,
       title: 'Joias Sustentáveis: O Futuro da Moda',
       category: 'Sustentabilidade',
-      image: modelo7,
+      image: '/assets/modelo7.png',
       date: '19 de janeiro de 2024'
     },
     {
       id: 6,
       title: 'O Poder das Joias na Autoestima',
       category: 'Dicas',
-      image: modelo8,
+      image: '/assets/modelo8.png',
       date: '19 de janeiro de 2024'
     }
   ];
@@ -85,6 +79,10 @@ const Blog = () => {
                     <span className="blog-category">{post.category}</span>
                   </div>
                   <h3 className="blog-card-title">{post.title}</h3>
+                  {/* Botão com seta que aparece no hover */}
+                  <div className="blog-card-arrow">
+                    <span className="arrow-icon">→</span>
+                  </div>
                 </div>
               </div>
             </article>

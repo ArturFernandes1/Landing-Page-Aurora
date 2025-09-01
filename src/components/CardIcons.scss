@@ -29,6 +29,15 @@
     padding: 25px 20px;
     text-align: center;
     box-shadow:  0 4px 1px 0 #c8a35b;
+    transition: all 0.3s ease; // Transição suave para todas as mudanças
+    cursor: pointer; // Indica que é clicável
+
+    &:hover,
+    &:focus {
+      border-right: 4px solid #c8a35b; // Border-right igual ao box-shadow
+      transform: translateY(-2px);
+      box-shadow: 0 6px 2px 0 #c8a35b;
+    }
 
   .card-icon {
     width: 70px;
@@ -53,88 +62,89 @@
 /* Responsividade */
 @media (max-width: 768px) {
   .section-card {
-    padding: 50px 20px; // Reduzido padding lateral para mostrar border
+    padding: 50px 20px;
   }
   
   .control-space-cards {
-    padding: 10px; // Reduzido padding para mostrar border
-    overflow: visible; // Mudado para visible para mostrar border
-    position: relative; // Para posicionar indicadores
+    padding: 10px;
+    overflow: visible;
+    position: relative;
   }
   
   .cards-grid {
-    display: flex; // Muda para flexbox em mobile
-    gap: 20px; // Aumentado gap para separar melhor os cards
-    overflow-x: auto; // Permite scroll horizontal
-    scroll-snap-type: x mandatory; // Snap suave ao scroll
-    scroll-behavior: smooth; // Scroll suave
-    scrollbar-width: none; // Esconde scrollbar no Firefox
-    -ms-overflow-style: none; // Esconde scrollbar no IE/Edge
+    display: grid; // Muda para grid em mobile
+    grid-template-columns: 1fr; // Uma coluna apenas
+    gap: 20px; // Espaçamento entre os cards
+    overflow: visible; // Remove overflow horizontal
     
-    // Melhorias para touch
-    -webkit-overflow-scrolling: touch; // Scroll suave no iOS
-    touch-action: pan-x; // Permite apenas scroll horizontal no touch
+    // Remove propriedades de carrossel
+    // scroll-snap-type: x mandatory;
+    // scroll-behavior: smooth;
+    // scrollbar-width: none;
+    // -ms-overflow-style: none;
+    // -webkit-overflow-scrolling: touch;
+    // touch-action: pan-x;
     
-    &::-webkit-scrollbar {
-      display: none; // Esconde scrollbar no Chrome/Safari
-    }
+    // Remove padding lateral e pseudo-elementos do carrossel
+    padding: 0;
     
-    // Adiciona padding para o primeiro e último card
-    padding: 0 20px; // Aumentado padding para mostrar border
+    // Remove indicador visual de scroll
+    // &::before {
+    //   content: '';
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   right: 0;
+    //   height: 2px;
+    //   background: linear-gradient(90deg, transparent, #c8a35b, transparent);
+    //   opacity: 0.3;
+    //   pointer-events: none;
+    // }
     
-    // Adiciona espaço no final para o último card
-    &::after {
-      content: '';
-      min-width: 20px; // Aumentado para mostrar border
-      height: 1px;
-    }
-    
-    // Indicador visual de scroll
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, #c8a35b, transparent);
-      opacity: 0.3;
-      pointer-events: none;
-    }
+    // Remove espaço no final
+    // &::after {
+    //   content: '';
+    //   min-width: 20px;
+    //   height: 1px;
+    // }
   }
   
   .container-card {
-    min-width: 280px; // Largura mínima fixa para mobile
-    max-width: 280px; // Largura máxima fixa para mobile
-    min-height: 320px; // Altura mínima aumentada para mobile
-    flex-shrink: 0; // Impede que os cards encolham
-    scroll-snap-align: start; // Snap ao início de cada card
-    padding: 25px 20px; // Aumentado padding interno
-    transition: transform 0.2s ease; // Transição suave para hover
-    border: 1px solid #d1c8b5; // Mesmo border da versão web
-    border-radius: 12px; // Mesmo border-radius da versão web
-    box-shadow: 0 4px 1px 0 #c8a35b; // Mesma sombra da versão web
-    margin: 20px 0; // Margin acima e abaixo dos cards
+    width: 100%; // Ocupa toda a largura disponível
+    max-width: none; // Remove limite de largura máxima
+    min-width: auto; // Remove largura mínima fixa
+    min-height: auto; // Remove altura mínima fixa
+    flex-shrink: auto; // Remove propriedade flex
+    scroll-snap-align: none; // Remove snap
+    padding: 25px 20px;
+    transition: all 0.3s ease; // Transição suave para todas as mudanças
+    border: 1px solid #d1c8b5;
+    border-radius: 12px;
+    box-shadow: 0 4px 1px 0 #c8a35b;
+    margin: 0; // Remove margin
+    cursor: pointer; // Indica que é clicável
 
-    &:hover {
-      transform: translateY(-2px); // Efeito de elevação no hover
-      box-shadow: 0 6px 2px 0 #c8a35b; // Sombra aumentada no hover
+    &:hover,
+    &:focus {
+      border-right: 4px solid #c8a35b; // Border-right igual ao box-shadow
+      transform: translateY(-2px);
+      box-shadow: 0 6px 2px 0 #c8a35b;
     }
 
     .card-icon {
-      width: 55px; // Aumentado de 50px para 55px
-      height: 55px; // Aumentado de 50px para 55px
-      margin-bottom: 20px; // Aumentado de 15px para 20px
+      width: 55px;
+      height: 55px;
+      margin-bottom: 20px;
     }
 
     .card-title {
-      font-size: 17px; // Aumentado de 16px para 17px
-      margin-bottom: 15px; // Aumentado de 10px para 15px
+      font-size: 17px;
+      margin-bottom: 15px;
     }
 
     .card-text {
-      font-size: 14px; // Aumentado de 13px para 14px
-      line-height: 1.7; // Aumentado line-height para melhor legibilidade
+      font-size: 14px;
+      line-height: 1.7;
     }
   }
 }
@@ -142,46 +152,52 @@
 /* Responsividade para telas muito pequenas */
 @media (max-width: 480px) {
   .section-card {
-    padding: 40px 8px; // Aumentado de 20px para 40px
+    padding: 40px 8px;
   }
   
   .control-space-cards {
-    padding: 10px; // Aumentado de 5px para 10px
+    padding: 10px;
   }
   
   .cards-grid {
-    gap: 15px; // Aumentado de 12px para 15px
-    padding: 0 12px; // Aumentado de 8px para 12px
-    
-    &::after {
-      min-width: 12px; // Aumentado de 8px para 12px
-    }
+    gap: 15px;
+    padding: 0;
   }
   
   .container-card {
-    min-width: 270px; // Aumentado de 260px para 270px
-    max-width: 270px; // Aumentado de 260px para 270px
-    min-height: 300px; // Altura mínima para telas muito pequenas
-    padding: 22px 16px; // Aumentado padding interno
-    border: 1px solid #d1c8b5; // Mesmo border da versão web
-    border-radius: 12px; // Mesmo border-radius da versão web
-    box-shadow: 0 4px 1px 0 #c8a35b; // Mesma sombra da versão web
-    margin: 15px 0; // Margin acima e abaixo dos cards (menor para telas pequenas)
+    width: 100%;
+    max-width: none;
+    min-width: auto;
+    min-height: auto;
+    padding: 22px 16px;
+    transition: all 0.3s ease; // Transição suave para todas as mudanças
+    border: 1px solid #d1c8b5;
+    border-radius: 12px;
+    box-shadow: 0 4px 1px 0 #c8a35b;
+    margin: 0;
+    cursor: pointer; // Indica que é clicável
+
+    &:hover,
+    &:focus {
+      border-right: 4px solid #c8a35b; // Border-right igual ao box-shadow
+      transform: translateY(-2px);
+      box-shadow: 0 6px 2px 0 #c8a35b;
+    }
 
     .card-icon {
-      width: 50px; // Aumentado de 45px para 50px
-      height: 50px; // Aumentado de 45px para 50px
-      margin-bottom: 18px; // Aumentado margin
+      width: 50px;
+      height: 50px;
+      margin-bottom: 18px;
     }
 
     .card-title {
-      font-size: 16px; // Aumentado de 15px para 16px
-      margin-bottom: 12px; // Aumentado margin
+      font-size: 16px;
+      margin-bottom: 12px;
     }
 
     .card-text {
-      font-size: 13px; // Aumentado de 12px para 13px
-      line-height: 1.6; // Line-height ajustado
+      font-size: 13px;
+      line-height: 1.6;
     }
   }
 }

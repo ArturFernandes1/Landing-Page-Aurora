@@ -19,10 +19,6 @@ export default function Home() {
     <>
       <Navigation/>
       <div className="hero-section">
-        <div className="hero-content">
-          <h1>Bem-vindo à Landing Page</h1>
-          <p>Uma experiência única e moderna</p>
-        </div>
       </div>
       <section id="sobre-nos">
         <Presentation/>

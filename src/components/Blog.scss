@@ -1,24 +1,11 @@
 .blog-section {
   padding: 5rem 0;
-  background: #f8f9fa; // Fundo claro como na imagem
+  background: #f8f9fa;
 
   .blog-container {
-    max-width: 900px; // Diminuído de 1000px para 900px
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
-    
-    // Telas maiores
-    @media (min-width: 1366px) {
-      max-width: 1200px;
-    }
-    
-    @media (min-width: 1600px) {
-      max-width: 1100px;
-    }
-    
-    @media (min-width: 1920px) {
-      max-width: 1200px;
-    }
   }
 
   .blog-header {
@@ -28,14 +15,14 @@
     h2 {
       font-size: 3rem;
       font-weight: 700;
-      color: #2c3e50; // Cor escura como na imagem
+      color: #2c3e50;
       margin-bottom: 1rem;
       font-family: sans-serif;
     }
 
     p {
       font-size: 1.2rem;
-      color: #6c757d; // Cor cinza escura como na imagem
+      color: #6c757d;
       max-width: 600px;
       margin: 0 auto;
       line-height: 1.6;
@@ -43,141 +30,111 @@
     }
   }
 
-
   .blog-grid {
-    
     display: grid;
-    grid-template-columns: repeat(3, 1fr); // 3 colunas
-    gap: 0.8rem; // Gap reduzido para aproximar os cards
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
     margin-bottom: 3rem;
     
     @media (max-width: 1024px) {
-      grid-template-columns: repeat(2, 1fr); // 2 colunas em tablets
-      gap: 0.5rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
     }
     
     @media (max-width: 768px) {
-      grid-template-columns: 1fr; // 1 coluna em mobile
-      gap: 0.5rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr;
+      gap: 1rem;
     }
   }
 
   .blog-card {
-    background: rgb(255, 255, 255);
-
-  .blog-container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0.5rem;
-      display: grid;
-      gap: 2rem;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-
-  .blog-card {
-    border-radius: 1.2rem;
+    background: #ffffff;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 6px 18px rgba(201, 50, 50, 0.08);
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    height: 400px;
 
- 
+    &:hover,
+    &:focus {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 
-    .card-image {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
+      .blog-card-image {
+        .blog-card-overlay {
+          .blog-card-arrow {
+            opacity: 1;
+            transform: translateY(0);
+          }
 
-    .card-content {
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-
-      .card-title {
-        font-size: 1.25rem;
-        font-weight: 600;
-        color: #2c3e50;
-        transition: color 0.3s ease;
-
-        &:hover {
-          color: #0077ff;
-        }
-      }
-
-      .card-text {
-        font-size: 0.95rem;
-        line-height: 1.5;
-        color: #6b7280;
-      }
-
-      .card-footer {
-        margin-top: auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        font-size: 0.85rem;
-        color: #9ca3af;
-
-        .read-more {
-          color: #0077ff;
-          font-weight: 500;
-          cursor: pointer;
-          transition: color 0.3s ease;
-
-          &:hover {
-            color: #005ecb;
+          .arrow-icon {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: scale(1.1);
+            
+            &::before {
+              transform: translateX(0);
+              opacity: 1;
+            }
           }
         }
       }
     }
-  }
-}
 
-         border-radius: 8px; // Mantido o border-radius menor
-     overflow: hidden;
-     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); // Sombra sutil
-     transition: all 0.3s ease;
-     cursor: pointer;
-     width: auto;
-     max-width: 450px; // Width aumentado para cards maiores
-     margin: 0 auto; // Centraliza os cards
+    .blog-card-image {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
 
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-    }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
 
-         .blog-card-image {
-       position: relative;
-       height: 450px; // Altura aumentada para manter proporção
-       overflow: hidden;
+      &:hover img {
+        transform: scale(1.05);
+      }
 
-                                                       img {
-             width: calc(100% - 20px);
-             height: calc(100% - 10px);
-             object-fit: cover; // Mantém proporção e cobre todo o espaço
-             object-position: center bottom; // Alinha com a parte inferior
-             transition: transform 0.3s ease;
-             margin: 10px 10px 0 10px; // Padding bem reduzido para imagem bem maior
-           }
+      // Categoria no topo (igual ao da Zeus Advogados)
+      .blog-card-category {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        background: rgba(255, 255, 255, 0.9);
+        color: #2c3e50;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        backdrop-filter: blur(10px);
+      }
 
-          // Data no topo
-         .blog-card-date {
-           position: absolute;
-           top: 0;
-           left: 0;
-           right: 0;
-           padding: 0.6rem;
-           color: rgb(95, 94, 94);
-           text-align: left; // Alinhado à esquerda
-           font-size: 0.9rem;
-           font-weight: 500;
-          
-         }
+      // Data no canto superior direito
+      .blog-card-date {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        backdrop-filter: blur(10px);
+      }
 
-      // Categoria e título na parte de baixo
+      // Overlay na parte inferior (igual ao da Zeus Advogados)
       .blog-card-overlay {
         position: absolute;
         bottom: 0;
@@ -185,37 +142,64 @@
         right: 0;
         background: linear-gradient(
           to top,
-          rgba(0, 0, 0, 0.8) 0%,
-          rgba(0, 0, 0, 0.6) 0%,
-          rgba(0, 0, 0, 0.3) 0%
+          rgba(0, 0, 0, 0.9) 0%,
+          rgba(0, 0, 0, 0.7) 50%,
+          rgba(0, 0, 0, 0.3) 100%
         );
-        padding: 1.5rem 1rem 1rem; // Padding reduzido
+        padding: 2rem 1.5rem 1.5rem;
         color: white;
 
-        .blog-card-meta {
-          display: flex;
-          gap: 0.75rem; // Gap reduzido
-          margin-bottom: 0.75rem; // Margin reduzido
-          font-size: 0.8rem; // Fonte menor
-          opacity: 0.9;
-
-          .blog-date {
-            display: none; // Esconde a data do overlay
-          }
-
-          .blog-category {
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-          }
+        .blog-card-title {
+          font-size: 1.1rem;
+          font-weight: 600;
+          line-height: 1.4;
+          margin: 0 0 1rem 0;
+          color: white;
+          font-family: sans-serif;
         }
 
-        .blog-card-title {
-          font-size: 1rem; // Fonte menor para caber melhor
-          font-weight: 600;
-          line-height: 1.3; // Line-height reduzido
-          margin: 0;
-          color: white;
+        // Botão com seta (igual ao da Zeus Advogados)
+        .blog-card-arrow {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 50%;
+          transform: translateY(20px);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          opacity: 0;
+          transition: all 0.3s ease;
+
+          .arrow-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 25px;
+            width: 100%;
+            height: 40px;
+            background: white;
+            color: black;
+            border-radius: 0;
+            font-size: 1.8rem;
+            font-weight: normal;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.3s ease;
+          }
+          
+          /* Efeito da seta deslizando da esquerda para direita */
+          .arrow-icon::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            transform: translateX(-100%);
+            opacity: 0;
+            transition: all 0.4s ease;
+            font-size: 1.2rem;
+            font-weight: normal;
+          }
+          
         }
       }
     }
@@ -229,7 +213,7 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      color: #6c757d; // Cor cinza escura como na imagem
+      color: #6c757d;
       text-decoration: underline;
       font-weight: 600;
       font-size: 1rem;
@@ -288,7 +272,47 @@
 
     .blog-grid {
       gap: 1rem;
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    .blog-card {
+      height: 350px;
+
+      .blog-card-image {
+        .blog-card-category {
+          font-size: 0.7rem;
+          padding: 0.4rem 0.8rem;
+        }
+
+        .blog-card-date {
+          font-size: 0.7rem;
+          padding: 0.4rem 0.8rem;
+        }
+
+        .blog-card-overlay {
+          padding: 1.5rem 1rem 1rem;
+
+          .blog-card-title {
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+          }
+
+          .blog-card-arrow {
+            width: 50%;
+            
+            .arrow-icon {
+              width: 100%;
+              height: 35px;
+              font-size: 1.5rem;
+              margin-left: 20px;
+              
+              &::before {
+                font-size: 1.5rem;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -303,16 +327,40 @@
 
     .blog-grid {
       .blog-card {
-        max-width: 260px; // Width ainda menor em mobile
-        
+        height: 300px;
+
         .blog-card-image {
-          height: 180px; // Altura menor em mobile
-          
+          .blog-card-category {
+            font-size: 0.65rem;
+            padding: 0.3rem 0.6rem;
+          }
+
+          .blog-card-date {
+            font-size: 0.65rem;
+            padding: 0.3rem 0.6rem;
+          }
+
           .blog-card-overlay {
             padding: 1.25rem 0.75rem 0.75rem;
-            
+
             .blog-card-title {
               font-size: 0.9rem;
+              margin-bottom: 0.5rem;
+            }
+
+            .blog-card-arrow {
+              width: 50%;
+              
+              .arrow-icon {
+                width: 100%;
+                height: 30px;
+                font-size: 1.3rem;
+                margin-left: 15px;
+                
+                &::before {
+                  font-size: 1.3rem;
+                }
+              }
             }
           }
         }

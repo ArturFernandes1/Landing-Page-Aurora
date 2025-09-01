@@ -22,15 +22,6 @@ export default function CustomNavigation() {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      // Adiciona um highlight visual temporário
-      element.style.border = '3px solid red';
-      element.style.transition = 'border 0.3s ease';
-      
-      // Remove o highlight após 2 segundos
-      setTimeout(() => {
-        element.style.border = '';
-      }, 2000);
-      
       element.scrollIntoView({ behavior: 'smooth' });
       setMobileOpen(false);
     } else {
